@@ -21,7 +21,6 @@ window.onload = function (){
     }
     // build row nodes then pass in boxes
     function addRow (){
-      console.log('row')
       var row = document.createElement('div');
       //create attribute (.row class) node
       var a = document.createAttribute('class');
@@ -60,32 +59,29 @@ window.onload = function (){
 
   // pallette handler function
   var palletteBuilder = function(){
-    // number of colors in pallete
-    // var pallNumber = 5;
-    //
-    // var pallRow = document.getElementById('pallete');
-
-
+    // get new color from picker
+    var newColor = document.getElementsByClassName('jscolor')[0].value;
+    var box = document.createElement('div');
+    var customRow = document.getElementsByClassName('custom');
+    //create attribute (.box class) node
+    var a = document.createAttribute('class');
+    a.value = "pallBox";
+    var backColor = document.createAttribute('style')
+    backColor.value = "background-color: " + newColor;
+    // attach attribute to box, and box to canvas
+    box.setAttributeNode(a);
+    box.setAttributeNode(backColor);
+    customRow.appendChild(box);
 
 
 
 
       // make new standard color available to paint(); function
-  }();
+  };
 
   var pallettePicker = function (elem) {
-    // var palBoxes = document.querySelectorAll('.pallBox');
-    // Object.keys(palBoxes).forEach(function(elem, idx) {
-    //   // get pallette destination
-    //   var pixelPall = palBoxes[idx];
-    //   console.log(pixelPall);
-    //   // on click set standard color to pallette source color
-    //   pixelPall.addEventListener('click', function(){
     elem.style.border = "solid thick black";
     paintBrush = elem.style.backgroundColor;
-    //   });
-
-    // });
   };
 
 
@@ -95,12 +91,17 @@ addEventListener('click', function(event){
   for (var i = 0; i < arrayOfElems.length; i++){
     if (arrayOfElems[i] === 'canvasBox'){
       paint(clickedEl);
+    } else if (arrayOfElems[i] === 'add') {
+      console.log('hi');
+      document.querySelectorAll('.pickAColor')[0].style.visibility = 'visible';
     } else if (arrayOfElems[i] === 'pallBox') {
       var palBoxes = document.getElementsByClassName('pallBox')
       Object.keys(palBoxes).forEach(function(elem, idx){
         palBoxes[idx].style.border = "solid thin black";
       });
       pallettePicker(clickedEl);
+    } else if (arrayOfElems[i] === 'jscolor') {
+      
     }
   }
 })

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Draw Stuff</title>
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <script src="jscolor/jscolor.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
   <body>
@@ -13,13 +14,26 @@
 
     <div id="pallete">
       <div class="row">
-        <div class="box pallBox" style="background-color: red"></div>
-        <div class="box pallBox" style="background-color: yellow"></div>
-        <div class="box pallBox" style="background-color: green"></div>
-        <div class="box pallBox" style="background-color: blue"></div>
-        <div class="box pallBox" style="background-color: purple"></div>
+        <div class="pallBox" style="background-color: red"></div>
+        <div class="pallBox" style="background-color: yellow"></div>
+        <div class="pallBox" style="background-color: green"></div>
+        <div class="pallBox" style="background-color: blue"></div>
+        <div class="pallBox" style="background-color: purple"></div>
+        <div class="add pallBox" style=""><p class="add">+</p></div>
+        <div class="pickAColor">
+          <div class="select pallBox"></div>
+          <input class="jscolor" value="ab2567" style="border: 2px medium rgb(134, 132, 133); margin: 2px">
+          
+        </div>
+      </div>
+      <div class="row custom">
+
       </div>
     </div>
-
+    <script>
+    	function setTextColor(picker) {
+    		document.getElementsByTagName('body')[0].style.color = '#' + picker.toString()
+    	}
+	</script>
   </body>
 </html>
