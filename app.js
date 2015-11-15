@@ -92,7 +92,6 @@ addEventListener('click', function(event){
     if (arrayOfElems[i] === 'canvasBox'){
       paint(clickedEl);
     } else if (arrayOfElems[i] === 'add') {
-      console.log('hi');
       document.querySelectorAll('.pickAColor')[0].style.visibility = 'visible';
     } else if (arrayOfElems[i] === 'pallBox') {
       var palBoxes = document.getElementsByClassName('pallBox')
@@ -101,9 +100,19 @@ addEventListener('click', function(event){
       });
       pallettePicker(clickedEl);
     } else if (arrayOfElems[i] === 'jscolor') {
-      
+
     }
   }
 })
+
+// add loop to set color from jscolor to pallette
+
+// use new area for circular Ui...
+
+// add drag through
+
+// add if/else to adjust size of canvasBoxes based on size of user choice
+
+// maybe just have large, medium, small?
 
 };

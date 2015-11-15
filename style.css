@@ -26,8 +26,11 @@
   margin-top: 15px;
   float: left;
 }
+
+/* add circular div for pallette*/
+
 .select {
-  background-color: 
+  background-color:
 }
 p {
   font-size: 30pt;
