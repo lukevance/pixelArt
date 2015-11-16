@@ -22,9 +22,13 @@
 }
 .pickAColor {
   visibility: hidden;
-  margin-left: 15px;
   margin-top: 15px;
   float: left;
+}
+.custom {
+  margin-top: 15px;
+  clear: both;
+  float:left;
 }
 
 /* add circular div for pallette*/

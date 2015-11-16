@@ -103,7 +103,32 @@ addEventListener('click', function(event){
 
     }
   }
-})
+});
+
+addEventListener("mousedown", function(event) {
+
+  addEventListener('mouseup', function(eventOff){
+    console.log('hello');
+    return;
+  });
+
+  var clickedEl = event.target;
+  var arrayOfElems = clickedEl.className.split(' ');
+  for (var i = 0; i < arrayOfElems.length; i++) {
+    if (arrayOfElems[i] === 'canvasBox'){
+      paint(clickedEl);
+      addEventListener("mousemove", function(event2) {
+        var hoverEl = event2.target;
+        var arrayOfHoverElems = hoverEl.className.split(' ');
+        for (var i = 0; i < arrayOfHoverElems.length; i++) {
+          if (arrayOfHoverElems[i] === 'canvasBox'){
+            paint(hoverEl);
+          }
+        };
+      });
+    }
+  };
+});
 
 // add loop to set color from jscolor to pallette
 
