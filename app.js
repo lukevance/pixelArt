@@ -1,10 +1,10 @@
 window.onload = function (){
 
   //
-  var build = function(){
+  var build = function(row, col){
     //later add funcitonality for dynamic changing of number
-    var rowNumber = 15;
-    var colNUmber = 15;
+    var rowNumber = row;
+    var colNUmber = col;
     //based on number add divs to canvas
     var canvas = document.getElementById('canvas');
 
@@ -41,7 +41,9 @@ window.onload = function (){
       addRow();
       i++;
     }
-  }();
+  };
+
+  build(10,10);
 
   //set default paintBrush color
   var paintBrush = 'red';
@@ -99,8 +101,15 @@ addEventListener('click', function(event){
         palBoxes[idx].style.border = "solid thin black";
       });
       pallettePicker(clickedEl);
+    } else if (arrayOfElems[i] === 'small'){
+      document.querySelectorAll('.welcome')[0].style.visibility = 'hidden';
+      build(20, 10);
+    } else if (arrayOfElems[i] === 'medium'){
+      build(10,10);
+    } else if (arrayOfElems[i] === 'large'){
+      build(10,10);
     } else if (arrayOfElems[i] === 'jscolor') {
-
+      
     }
   }
 });
